@@ -44,12 +44,12 @@ userRoutes.post("/signin", (req, res) => {
   User.findOne({ email: req.body.email }).exec((err, data) => {
     if (!data) {
       res.status(404);
-      res.json("Error: User Not Exist,Please Signup");
+      res.json({ msg: "Error: User Not Exist,Please Signup" });
     } else if (data.password == req.body.password) {
       res.status(200);
-      res.json(true);
+      res.json({ msg: "true" });
     } else {
-      res.json("Error: Please Enter Correct Password");
+      res.json({ msg: "Error: Please Enter Correct Password" });
     }
   });
 });
