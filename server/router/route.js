@@ -13,6 +13,7 @@ db.once("open", () => {
   console.log("mongodb connected succcessfully");
 });
 //!route to momgo route
+
 routes.use("/user", gotoUser);
 
 //! Default route for any error found
